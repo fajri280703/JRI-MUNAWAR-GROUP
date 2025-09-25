@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JRI Munawar Group — Membangun Masa Depan Berkelanjutan</title>
+    <link rel="icon" type="image/png" href="ChatGPT_Image_Sep_22__2025__11_03_39_PM-removebg-preview.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-1: #061233;
+            --bg-2: #0f5fbf;
+            --accent: #ffbf47;
+            --muted: #e6f0ff;
+            --max-width: 1200px;
+            --radius: 20px;
+            --transition: all 0.3s ease;
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background: linear-gradient(135deg, #02102a 0%, #0b3a6b 35%, #003cff 100%);
+            color: #0b1630;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles - Logo dan Nama Perusahaan yang Sesuai */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            position: relative;
+            z-index: 100;
+        }
+
+        .brand { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            transition: var(--transition);
+        }
+
+        .logo {
+            width: 50px; /* Ukuran logo diperkecil */
+            height: 50px; /* Ukuran logo diperkecil */
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .brand h1 { 
+            font-size: 22px; /* Ukuran font nama perusahaan diperkecil */
+            font-weight: 700; 
+            color: rgb(255, 255, 255); 
+            margin: 0; 
+            text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            letter-spacing: 0.3px;
+        }
+
+        nav { 
+            display: flex; 
+            gap: 12px; 
+        }
+
+        nav a {
+            color: rgb(255, 255, 255); 
+            text-decoration: none; 
+            padding: 8px 15px;
+            border-radius: 8px; 
+            font-weight: 600; 
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+        }
+
+        nav a:hover { 
+            background: rgba(255, 255, 255, 0.2); 
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a.active { 
+            background: rgba(255, 255, 255, 0.25); 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 50px;
+            align-items: start;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 50px;
+            border-radius: var(--radius);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+            margin: 40px 0;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .hero-content { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 25px; 
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 10px;
+            color: rgb(255, 255, 254);
+            font-size: 38px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-align: center;  
+            width: 100%;         
+            background: linear-gradient(135deg, rgba(255,191,71,0.2) 0%, rgba(15,95,191,0.2) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            margin-bottom: 10px;
+        }
+
+        .hero h2 { 
+            font-size: 28px; 
+            font-weight: 700; 
+            color: rgb(183, 255, 0);
+            margin: 0; 
+            line-height: 1.3;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .hero p { 
+            color: #dbe6ff; 
+            font-size: 16px; 
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        /* Unit Grid */
+        .unit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .unit {
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .unit:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .corp { 
+            background: linear-gradient(135deg, #8a7bc5 0%, #d32f2f 100%); 
+            color: #ffffff; 
+        }
+
+        .liv { 
+            background: linear-gradient(135deg, #6a67ce 0%, #2a21a3 100%); 
+            color: white; 
+        }
+
+        .unit-image {
+            width: 100%;
+            height: 160px; /* Diperkecil sedikit */
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .unit-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+            transition: var(--transition);
+            padding: 10px;
+        }
+
+        .unit:hover .unit-image img {
+            transform: scale(1.05);
+        }
+
+        /* Modifikasi untuk logo JRI Corporation */
+        .unit-image .corp-logo {
+            width: 90% !important;
+            height: 90% !important;
+            object-fit: contain !important;
+            object-position: center center !important;
+        }
+
+        .unit-content { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 12px; 
+            text-align: center;
+        }
+
+        .unit .title { 
+            font-size: 22px; 
+            font-weight: 700; 
+            margin: 0; 
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .unit .desc { 
+            font-size: 15px; 
+            line-height: 1.5; 
+            margin: 0; 
+            opacity: 0.9;
+        }
+
+        /* Side Panel */
+        .side-panel { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 25px; 
+        }
+
+        .panel {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            padding: 25px;
+            color: rgb(255, 255, 255);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .panel:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .panel h3 { 
+            font-size:22px; 
+            margin-bottom: 15px; 
+            color: rgb(255, 255, 255); 
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .panel h3::before {
+            content: '▸';
+            color: var(--accent);
+        }
+
+        .panel p { 
+            margin-bottom: 18px; 
+            color: #ffffff; 
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .stats { 
+            display: flex; 
+            gap: 15px; 
+            margin-top: 15px; 
+            justify-content: space-between;
+        }
+
+        .stat {
+            flex: 1; 
+            text-align: center; 
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05); 
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .stat h3 { 
+            margin: 0 0 8px 0; 
+            font-size: 16px; 
+            color: #fdfdfd; 
+            font-weight: 600; 
+            text-shadow: none;
+            text-align: center;
+            width: 100%;
+        }
+
+        .stat h3::before {
+            display: none;
+        }
+
+        .stat p { 
+            font-size: 24px; 
+            font-weight: 800; 
+            margin: 0; 
+            color: rgb(253, 253, 253); 
+            text-align: center; 
+        }
+
+        .btn {
+            width: 100%; 
+            padding: 14px; 
+            border: none; 
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent) 0%, #ff9d00 100%);
+            font-weight: 700; 
+            cursor: pointer;
+            font-size: 15px; 
+            transition: var(--transition);
+            color: #0b1630;
+            margin-top: 15px;
+            box-shadow: 0 4px 12px rgba(255, 191, 71, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn:hover { 
+            background: linear-gradient(135deg, #ffcc70 0%, #ffae42 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 191, 71, 0.4);
+        }
+
+        .video-container {
+            position: relative; 
+            width: 100%; 
+            padding-top: 56.25%;
+            border-radius: 10px; 
+            overflow: hidden; 
+            margin-top: 15px; 
+            background-color: #000000;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .video-container video {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            object-fit: cover; 
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .video-container:hover video {
+            transform: scale(1.02);
+        }
+
+        /* About Section */
+        .about-section {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            padding: 40px;
+            margin: 50px 0;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(253, 253, 253, 0.952);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .about-section h2 {
+            font-size: 36px;
+            color: rgb(0, 253, 0);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .about-section p {
+            color: #dbe6ff;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        /* Contact Boxes Section */
+        .contact-section {
+            margin: 50px 0;
+        }
+
+        .contact-section h2 {
+            font-size: 32px;
+            color: #ffbf47;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .contact-boxes {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, rgba(15, 95, 191, 0.2), rgba(6, 18, 51, 0.3));
+            border: 1px solid rgba(255, 191, 71, 0.3);
+            border-radius: 16px;
+            padding: 30px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 191, 71, 0.5);
+        }
+
+        .contact-box h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffbf47;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .contact-box h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-item i {
+            font-size: 20px;
+            color: #ffbf47;
+            width: 30px;
+            text-align: center;
+        }
+
+        .contact-item span {
+            font-size: 16px;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .social-media {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-media a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            transition: var(--transition);
+        }
+
+        .social-media a:hover {
+            background: var(--accent);
+            color: #061233;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px; 
+            padding: 30px 0; 
+            color: #ffffff;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            text-align: center; 
+            font-size: 14px;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: #dce6ff;
+            font-size: 18px;
+            transition: var(--transition);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .hero { 
+                grid-template-columns: 1fr; 
+                gap: 35px; 
+                padding: 35px 25px;
+            }
+            .unit-grid { 
+                grid-template-columns: 1fr; 
+            }
+            header { 
+                flex-direction: column; 
+                gap: 20px; 
+                text-align: center; 
+            }
+            nav { 
+                flex-wrap: wrap; 
+                justify-content: center; 
+            }
+            .hero h2 {
+                font-size: 28px;
+            }
+            .brand h1 {
+                font-size: 20px;
+            }
+            .logo {
+                width: 45px;
+                height: 45px;
+            }
+            .about-section {
+                padding: 35px 25px;
+            }
+            .unit-image {
+                height: 140px;
+            }
+            .contact-boxes {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero { 
+                padding: 25px 15px; 
+                margin: 15px 0;
+            }
+            .hero h2 { 
+                font-size: 24px; 
+            }
+            .stats { 
+                flex-direction: column; 
+                gap: 12px; 
+            }
+            .unit-image { 
+                height: 140px; 
+            }
+            .logo { 
+                width: 40px; 
+                height: 40px; 
+            }
+            .brand h1 { 
+                font-size: 18px; 
+            }
+            .eyebrow {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+            .unit {
+                padding: 20px;
+            }
+            .panel {
+                padding: 20px;
+            }
+            .unit .title {
+                font-size: 20px;
+            }
+            .about-section {
+                padding: 25px 15px;
+            }
+            nav a {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+            .contact-box {
+                padding: 25px 20px;
+            }
+            .contact-box h3 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <div class="logo">
+                    <img src="ChatGPT_Image_Sep_22__2025__11_03_39_PM-removebg-preview.png" alt="JRI Munawar Group Logo">
+                </div>
+                <div>
+                    <h1>JRI Munawar Group</h1>
+                </div>
+            </div>
+            <nav>
+                <a href="index.html" class="active">Beranda</a>
+                <a href="tentang-kami.html">Tentang Kami</a>
+                <a href="perkembangan.html">Perkembangan</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <span class="eyebrow">Selamat Datang</span>
+                <h2>JRI Munawar Group Membangun Masa Depan yang Berkelanjutan</h2>
+                <p>Kami menggabungkan keahlian media, investasi, UMKM, dan komunitas untuk menghasilkan solusi yang berdampak dan berkelanjutan.</p>
+
+                <div class="unit-grid" id="unit">
+                    <a href="jri-munawar-corporation.html" class="unit corp">
+                        <div class="unit-image">
+                            <img src="Screenshot_2025-09-23_145023-removebg-preview.png" alt="JRI Corporation" class="corp-logo">
+                        </div>
+                        <div class="unit-content">
+                            <div class="title">JRI Munawar Corporation</div>
+                            <div class="desc">Unit utama kami: media profesional, investasi strategis, riset, dan pengembangan produk.</div>
+                        </div>
+                    </a>
+                    <a href="jri-munawar-liventher.html" class="unit liv">
+                        <div class="unit-image">
+                            <img src="Screenshot_2025-09-23_144610-removebg-preview.png" alt="JRI Liventher">
+                        </div>
+                        <div class="unit-content">
+                            <div class="title">JRI Munawar Liventher</div>
+                            <div class="desc">Sayap komunitas & UMKM: hiburan, edukasi dasar, olahraga hobi, dan dukungan usaha kecil.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <aside class="side-panel">
+                <div class="panel">
+                    <h3>Video Profil Perusahaan</h3>
+                    <div class="video-container">
+                        <video id="company-video" autoplay muted loop>
+                            <source src="https://player.vimeo.com/external/194837908.sd.mp4?s=c350076905b78c67f74d7ee39fdb4fef01d12420&profile_id=164" type="video/mp4">
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung tag video.
+                        </video>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <h3>Ringkasan Cepat</h3>
+                    <p>Satu wadah, banyak arah: sebuah ekosistem kolaborasi yang menyalurkan gagasan besar, menumbuhkan inovasi tanpa batas, memperkuat pertumbuhan berkelanjutan, menyatukan ide dan semangat, serta membuka jalan menuju masa depan yang visioner, elegan, dan penuh makna.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>Unit</h3>
+                            <p>2</p>
+                        </div>
+                        <div class="stat">
+                            <h3>Lokasi</h3>
+                            <p>Indonesia</p>
+                        </div>
+                    </div>
+                    <button class="btn">Unduh Profil Perusahaan</button>
+                </div>
+            </aside>
+        </section>
+
+        <section class="about-section" id="tentang">
+            <h2>Tentang JRI Munawar Group</h2>
+            <p>JRI Munawar Group adalah sebuah ekosistem bisnis yang berkomitmen untuk menciptakan dampak positif melalui berbagai unit usaha yang saling mendukung. Dengan pendekatan kolaboratif dan berkelanjutan, kami bertujuan untuk membangun masa depan yang lebih baik untuk semua pemangku kepentingan.</p>
+            <p>Didirikan pada tahun 2025, JRI Munawar Group telah berkembang menjadi entitas yang mengintegrasikan media profesional, investasi strategis, pengembangan UMKM, dan komunitas yang dinamis. Kami percaya bahwa inovasi dan kolaborasi adalah kunci untuk menciptakan solusi yang bermakna dan berkelanjutan.</p>
+        </section>
+
+        <!-- Contact Boxes Section -->
+        <section class="contact-section">
+            <h2>Hubungi Kami</h2>
+            <div class="contact-boxes">
+                <div class="contact-box">
+                    <h3>JRI Munawar Corporation</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+62 21 5555 1234</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>corp@jrimunawar.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Merdeka No. 123, Jakarta</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <span>Media Sosial:</span>
+                        </div>
+                        <div class="social-media">
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-box">
+                    <h3>JRI Munawar Liventher</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+62 22 5555 5678</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>liventher@jrimunawar.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Nusantara No. 45, Bandung</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <span>Media Sosial:</span>
+                        </div>
+                        <div class="social-media">
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 JRI Munawar Group — Semua Hak Dilindungi</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Animasi scroll halus
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                // Hanya mencegah default jika tautan adalah anchor (#)
+                if(this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                // Untuk tautan ke halaman lain, biarkan browser menangani navigasi
+            });
+        });
+
+        // Tambahkan kelas aktif untuk navigasi saat scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                // Hanya atur kelas aktif untuk tautan anchor
+                if(link.getAttribute('href').startsWith('#')) {
+                    link.classList.remove('active');
+                    if(link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        // Fungsi untuk tombol download
+        document.querySelector('.btn').addEventListener('click', function() {
+            alert('Fitur download akan segera tersedia!');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - JRI Munawar Group</title>
+    <link rel="icon" type="image/png" href="ChatGPT_Image_Sep_22__2025__11_03_39_PM-removebg-preview.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-1: #061233;
+            --bg-2: #0f5fbf;
+            --accent: #ffbf47;
+            --muted: #e6f0ff;
+            --max-width: 1200px;
+            --radius: 20px;
+            --transition: all 0.3s ease;
+            --hero-height: 520px;
+            --overlay-color: rgba(3,12,34,0.64);
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background: linear-gradient(135deg, #02102a 0%, #0b3a6b 35%, #003cff 100%);
+            color: #0b1630;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            position: relative;
+            z-index: 100;
+        }
+
+        .brand { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            transition: var(--transition);
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .brand h1 { 
+            font-size: 22px;
+            font-weight: 700; 
+            color: rgb(255, 255, 255); 
+            margin: 0; 
+            text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            letter-spacing: 0.3px;
+        }
+
+        nav { 
+            display: flex; 
+            gap: 12px; 
+        }
+
+        nav a {
+            color: rgb(255, 255, 255); 
+            text-decoration: none; 
+            padding: 8px 15px;
+            border-radius: 8px; 
+            font-weight: 600; 
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+        }
+
+        nav a:hover { 
+            background: rgba(255, 255, 255, 0.2); 
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a.active { 
+            background: rgba(255, 255, 255, 0.25); 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hero Section untuk Tentang Kami */
+        .about-hero {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 60px 50px;
+            border-radius: var(--radius);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+            margin: 40px 0;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .about-hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: #ffbf47;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .about-hero p {
+            font-size: 20px;
+            color: #dbe6ff;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        /* Stats Section */
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            min-width: 150px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: #ffbf47;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #dbe6ff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section Styles */
+        .section {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            padding: 40px;
+            margin: 30px 0;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .section h2 {
+            font-size: 32px;
+            color: #ffbf47;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            color: #dbe6ff;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        /* Unit Styles untuk Tentang Kami */
+        .unit-content {
+            flex: 1;
+        }
+
+        .unit-features {
+            margin-top: 20px;
+        }
+
+        .unit-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .unit-feature i {
+            color: #ffbf47;
+            font-size: 14px;
+        }
+
+        /* Philosophy Section Styles */
+        .philosophy-section {
+            padding: 60px 20px;
+            background: linear-gradient(180deg, rgba(15,95,191,0.04), rgba(6,18,51,0.02));
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .philosophy-section .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        /* Quote box */
+        .philosophy-quote {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(15,95,191,0.08), rgba(6,18,51,0.04));
+            border-left: 4px solid var(--accent);
+            padding: 20px 22px;
+            border-radius: var(--radius);
+            box-shadow: 0 6px 18px rgba(11,37,69,0.06);
+            margin-bottom: 26px;
+            transition: var(--transition);
+        }
+
+        .philosophy-quote:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(11,37,69,0.1);
+        }
+
+        .quote-icon {
+            width: 44px;
+            height: 44px;
+            fill: var(--accent);
+            flex: 0 0 44px;
+            opacity: 0.95;
+            transition: var(--transition);
+        }
+
+        .philosophy-quote:hover .quote-icon {
+            transform: scale(1.1);
+        }
+
+        .quote-text{
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #dbe6ff;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        /* Philosophy body */
+        .philosophy-body {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius);
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+        }
+
+        .philosophy-body:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .philosophy-body h2{
+            font-size: 1.5rem;
+            margin: 0 0 16px;
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+        }
+
+        .philosophy-body h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .philosophy-body p{
+            color: #dbe6ff;
+            line-height: 1.8;
+            margin: 0 0 14px;
+            font-size: 1rem;
+        }
+
+        /* Principles & Values Section */
+        .principles-section {
+            padding: 70px 20px;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .principles-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15,95,191,0.1), rgba(6,18,51,0.05));
+            z-index: -1;
+        }
+
+        .principles-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .principles-header h2 {
+            font-size: 36px;
+            color: #ffbf47;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .principles-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .principles-header p {
+            font-size: 18px;
+            color: #dbe6ff;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .principle-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .principle-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .principle-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffbf47;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .principle-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 1px;
+        }
+
+        .principle-desc {
+            color: #dbe6ff;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Cerita Besar Kami Section */
+        .hero-story{
+            position: relative;
+            width: 100%;
+            min-height: var(--hero-height);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-image: url('https://picsum.photos/seed/cerita-besar/1600/900.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 60px 0;
+        }
+
+        /* Dark overlay for dramatic contrast */
+        .hero-overlay{
+            position: absolute;
+            inset: 0;
+            background: var(--overlay-color);
+            backdrop-filter: blur(0.6px);
+            z-index: 1;
+        }
+
+        /* Content wrapper */
+        .hero-content{
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .hero-inner{
+            max-width: var(--max-width);
+            color: #fff;
+            text-align: left;
+            padding: 36px;
+            border-radius: var(--radius);
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            box-shadow: 0 10px 30px rgba(3, 12, 34, 0.5);
+        }
+
+        /* Headings and text */
+        .hero-inner h2{
+            font-size: 2.0rem;
+            margin: 0 0 14px;
+            letter-spacing: 0.2px;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .hero-inner .lead{
+            font-size: 1.125rem;
+            margin: 0 0 16px;
+            color: #f4f8ff;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+        .hero-inner .body{
+            color: #e6f0ff;
+            margin: 0 0 22px;
+            line-height: 1.8;
+            font-size: 0.99rem;
+        }
+
+        /* CTA buttons */
+        .cta-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            box-shadow: 0 6px 18px rgba(3,12,34,0.35);
+        }
+
+        /* primary button */
+        .btn.primary {
+            background: linear-gradient(90deg, rgba(255,191,71,1), rgba(255,170,50,0.95));
+            color: #061233;
+        }
+
+        /* ghost button */
+        .btn.ghost {
+            background: transparent;
+            color: #dbe9ff;
+            border: 1px solid rgba(219,233,255,0.12);
+        }
+
+        /* hover effects */
+        .btn:hover { 
+            transform: translateY(-4px); 
+            box-shadow: 0 12px 30px rgba(3,12,34,0.45); 
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px; 
+            padding: 30px 0; 
+            color: #ffffff;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            text-align: center; 
+            font-size: 14px;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: #dce6ff;
+            font-size: 18px;
+            transition: var(--transition);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            header { 
+                flex-direction: column; 
+                gap: 20px; 
+                text-align: center; 
+            }
+            nav { 
+                flex-wrap: wrap; 
+                justify-content: center; 
+            }
+            .about-hero {
+                padding: 40px 25px;
+            }
+            .about-hero h1 {
+                font-size: 32px;
+            }
+            .about-hero p {
+                font-size: 18px;
+            }
+            .section {
+                padding: 30px 25px;
+            }
+            .stats-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            .principles-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            :root { --hero-height: 640px; }
+            .hero-inner { padding: 26px; border-radius: 12px; }
+            .hero-inner h2 { font-size: 1.6rem; }
+            .hero-inner .lead { font-size: 1.02rem; }
+            .hero-inner .body { font-size: 0.98rem; }
+        }
+
+        @media (max-width: 600px) {
+            .about-hero { 
+                padding: 30px 15px; 
+                margin: 15px 0;
+            }
+            .about-hero h1 { 
+                font-size: 28px; 
+            }
+            .about-hero p {
+                font-size: 16px;
+            }
+            .section {
+                padding: 25px 15px;
+            }
+            nav a {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+            .stat-item {
+                min-width: 120px;
+                padding: 15px;
+            }
+            .stat-number {
+                font-size: 28px;
+            }
+            .philosophy-quote {
+                flex-direction: column;
+                text-align: center;
+            }
+            .principles-header h2 {
+                font-size: 28px;
+            }
+            .principles-header p {
+                font-size: 16px;
+            }
+            .principles-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .principle-card {
+                padding: 25px 20px;
+            }
+            .principle-title {
+                font-size: 20px;
+            }
+            .hero-inner { padding: 20px; }
+            .cta-row { justify-content: center; }
+            .hero-inner h2 { text-align: center; }
+            .hero-inner .lead, .hero-inner .body { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <div class="logo">
+                    <img src="ChatGPT_Image_Sep_22__2025__11_03_39_PM-removebg-preview.png" alt="JRI Munawar Group Logo">
+                </div>
+                <div>
+                    <h1>JRI Munawar Group</h1>
+                </div>
+            </div>
+            <nav>
+                <a href="index.html">Beranda</a>
+                <a href="tentang-kami.html" class="active">Tentang Kami</a>
+                <a href="perkembangan.html">Perkembangan</a>
+            </nav>
+        </header>
+
+        <section class="about-hero">
+            <h1>Tentang Kami</h1>
+            <p>Membangun masa depan bisnis dengan inovasi, dedikasi, dan integritas. Merintis jalan baru di tengah persaingan global dengan visi yang jelas dan komitmen tak tergoyahkan.</p>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Unit Bisnis</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2025</div>
+                    <div class="stat-label">Tahun Berdiri</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Komitmen</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Corporation</h2>
+            
+            <div class="unit-content">
+                <p>JRI Munawar Corporation merupakan fondasi kokoh yang menopang seluruh struktur bisnis grup. Dengan fokus pada strategi bisnis yang matang, penguatan aset perusahaan, dan implementasi manajemen modern yang adaptif, kami siap menghadapi tantangan bisnis global yang dinamis.</p>
+                
+                <div class="unit-features">
+                    <div class="unit-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Strategi Bisnis yang Kokoh dan Berkelanjutan</span>
+                    </div>
+                    <div class="unit-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Penguatan Aset Perusahaan untuk Pertumbuhan Jangka Panjang</span>
+                    </div>
+                    <div class="unit-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Manajemen Modern yang Adaptif terhadap Perubahan</span>
+                    </div>
+                    <div class="unit-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Pengembangan Potensi Bisnis melalui Inovasi Berkelanjutan</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Lienther</h2>
+            
+            <div class="unit-content">
+                <p>JRI Munawar Lienther adalah sinergi inovasi dan teknologi yang menjadi pilar utama JRI Munawar Group. Kami menghadirkan solusi transformasi digital, teknologi kreatif, kolaborasi lintas industri, dan inovasi berkelanjutan untuk memperkuat posisi grup di kancah global dan menciptakan masa depan yang lebih cerah.</p>
+                
+                <div class="unit-features">
+                    <div class="unit-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Transformasi Digital untuk Efisiensi dan Skalabilitas</span>
+                    </div>
+                    <div class="unit-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Teknologi Kreatif yang Mengubah Cara Bekerja</span>
+                    </div>
+                    <div class="unit-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Kolaborasi Lintas Industri untuk Solusi Holistik</span>
+                    </div>
+                    <div class="unit-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Inovasi Berkelanjutan untuk Masa Depan yang Lebih Baik</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERITA BESAR KAMI — START -->
+        <section class="hero-story" aria-label="Cerita Besar Kami — JRI Munawar Group">
+          <div class="hero-overlay"></div>
+
+          <div class="hero-content">
+            <div class="hero-inner">
+              <h2>Cerita Besar Kami</h2>
+              <p class="lead">
+                Dari sebuah gagasan sederhana, JRI Munawar Group tumbuh menjadi ruang yang
+                memayungi dua kekuatan: strategi tingkat atas yang berorientasi profesional
+                dan denyut rakyat yang hidup di komunitas. Perjalanan ini bukan sekadar
+                membangun usaha — melainkan merangkai mimpi bersama, mengambil langkah nyata,
+                dan meninggalkan jejak yang berarti.
+              </p>
+
+              <p class="body">
+                Awalnya sebuah visi kecil bertemu dengan tekad untuk bergerak. Seiring waktu,
+                ide-ide itu bertemu dengan insan-insan yang mau bekerja, belajar, dan berbagi.
+                Hasilnya bukan hanya struktur organisasi, tetapi jaringan nyata yang memberi
+                manfaat — dari peningkatan kapasitas UMKM, kegiatan edukasi, hingga program
+                komunitas yang menyentuh kehidupan sehari-hari. Inilah kisah kami: sederhana
+                dalam asal, besar dalam dampak.
+              </p>
+
+              <div class="cta-row">
+                <a href="/perkembangan" class="btn primary">Lihat Perkembangan</a>
+                <a href="/tentang-kami#tim" class="btn ghost">Kenali Tim Kami</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- CERITA BESAR KAMI — END -->
+
+        <!-- FILOSOFI — START -->
+        <section class="philosophy-section">
+          <div class="container">
+            <!-- Quote highlight -->
+            <div class="philosophy-quote" aria-hidden="false">
+              <svg class="quote-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7.17 6A4.17 4.17 0 0 0 3 10.17v3.66A4.17 4.17 0 0 0 7.17 18h1.66A4.17 4.17 0 0 0 13 13.83V9.17A4.17 4.17 0 0 0 8.83 5H7.17zM16.17 6A4.17 4.17 0 0 0 12 10.17v3.66A4.17 4.17 0 0 0 16.17 18h1.66A4.17 4.17 0 0 0 22 13.83V9.17A4.17 4.17 0 0 0 17.83 5h-1.66z"/>
+              </svg>
+              <p class="quote-text">
+                "Perjalanan kami bukan sekadar pertumbuhan — melainkan upaya meninggalkan jejak nyata yang bermanfaat bagi banyak pihak."
+              </p>
+            </div>
+
+            <!-- Filosofi detail -->
+            <div class="philosophy-body">
+              <h2>Filosofi JRI Munawar Group</h2>
+              <p>
+                JRI Munawar Group berdiri atas keyakinan bahwa kekuatan organisasi tumbuh dari keseimbangan antara gagasan besar dan kerja nyata di lapangan.
+                Kami memandang pembangunan sebagai proses yang berkelanjutan: menghormati potensi lokal, mengedepankan integritas, dan mengedukasi
+                generasi penerus melalui tindakan nyata. Setiap unit — baik yang bergerak pada ranah strategis maupun yang mendekat pada komunitas —
+                dirancang untuk saling melengkapi sehingga hasil yang dicapai tidak sekadar terlihat pada angka, tetapi terasa manfaatnya oleh masyarakat.
+              </p>
+
+              <p>
+                Dalam praktik sehari-hari, filosofi ini diwujudkan lewat prioritas pada pemberdayaan, inovasi yang aplikatif, serta keputusan yang mempertimbangkan
+                dampak sosial dan lingkungan. Kami percaya bahwa langkah kecil yang konsisten akan membentuk perubahan besar; oleh karena itu setiap program
+                dan kolaborasi direncanakan dengan tujuan jangka panjang yang nyata dan bertanggung jawab.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- FILOSOFI — END -->
+
+        <!-- PRINSIP & NILAI KERJA — START -->
+        <section class="principles-section">
+            <div class="container">
+                <div class="principles-header">
+                    <h2>Prinsip & Nilai Kerja</h2>
+                    <p>
+                        Bagi JRI Munawar Group, prinsip dan nilai bukanlah sekadar tulisan yang terpajang di dinding atau halaman resmi. 
+                        Ia adalah denyut yang menghidupkan setiap langkah, kompas yang menjaga arah, serta fondasi yang memastikan perjalanan ini tetap kokoh.
+                    </p>
+                </div>
+
+                <div class="principles-grid">
+                    <div class="principle-card">
+                        <h3 class="principle-title">Integritas Tanpa Kompromi</h3>
+                        <p class="principle-desc">
+                            Kami memegang teguh kejujuran dan tanggung jawab dalam setiap keputusan. Kepercayaan publik dan mitra adalah modal yang jauh lebih mahal daripada sekadar angka keuntungan.
+                        </p>
+                    </div>
+
+                    <div class="principle-card">
+                        <h3 class="principle-title">Profesionalisme yang Konsisten</h3>
+                        <p class="principle-desc">
+                            Kami percaya bahwa kualitas lahir dari disiplin dan ketekunan. Profesionalisme bagi kami bukan hanya kemampuan bekerja dengan baik, melainkan komitmen untuk terus memperbaiki diri.
+                        </p>
+                    </div>
+
+                    <div class="principle-card">
+                        <h3 class="principle-title">Inovasi dengan Tujuan</h3>
+                        <p class="principle-desc">
+                            Dalam dunia yang terus berubah, inovasi adalah keniscayaan. Namun, bagi kami, inovasi tidak boleh hampa. Setiap gagasan baru harus relevan, aplikatif, dan memberi dampak positif.
+                        </p>
+                    </div>
+
+                    <div class="principle-card">
+                        <h3 class="principle-title">Kedekatan dengan Masyarakat</h3>
+                        <p class="principle-desc">
+                            Kami memahami bahwa kekuatan terbesar terletak pada masyarakat. Karena itu, baik melalui Corporation yang bergerak di jalur strategis, maupun Lienther yang membumi dekat komunitas.
+                        </p>
+                    </div>
+
+                    <div class="principle-card">
+                        <h3 class="principle-title">Kolaborasi yang Menguatkan</h3>
+                        <p class="principle-desc">
+                            Tidak ada keberhasilan yang lahir sendirian. JRI Munawar Group percaya bahwa kolaborasi adalah energi yang melipatgandakan kekuatan. Kami membuka ruang kerja sama dengan berbagai pihak.
+                        </p>
+                    </div>
+
+                    <div class="principle-card">
+                        <h3 class="principle-title">Kepedulian Sosial & Lingkungan</h3>
+                        <p class="principle-desc">
+                            Keberhasilan sejati adalah ketika langkah yang kita ambil tidak hanya menguntungkan, tetapi juga menjaga harmoni dengan sesama dan alam untuk masa depan yang berkelanjutan.
+                        </p>
+                    </div>
+
+                    <div class="principle-card">
+                        <h3 class="principle-title">Kemandirian & Ketangguhan</h3>
+                        <p class="principle-desc">
+                            Kami berupaya membangun fondasi internal yang kuat sehingga tidak mudah bergantung pada pihak luar. Ketangguhan ini menjadikan kami mampu bertahan menghadapi perubahan.
+                        </p>
+                    </div>
+
+                    <div class="principle-card">
+                        <h3 class="principle-title">Dedikasi pada Masa Depan</h3>
+                        <p class="principle-desc">
+                            Setiap usaha, inovasi, dan kerja keras yang kami lakukan hari ini adalah bentuk investasi jangka panjang untuk generasi berikutnya, meninggalkan warisan yang bermakna.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- PRINSIP & NILAI KERJA — END -->
+
+        <footer>
+            <p>&copy; 2025 JRI Munawar Group — Semua Hak Dilindungi</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Animasi scroll halus
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
